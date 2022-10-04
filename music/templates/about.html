@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>About</title>
+    <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="static/assets/css/Navbar-Right-Links-Dark-icons.css">
+    <link rel="stylesheet" href="static/assets/css/vanilla-zoom.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark py-3">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg class="bi bi-music-note-list" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"></path>
+            <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"></path>
+            <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"></path>
+            <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"></path>
+        </svg></span><span>Muscial</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-5">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="margin-top: 29px;">
+        <div class="row">
+            <div class="col-md-6"><img src="static/assets/img/clipboard-image-3.png"></div>
+            <div class="col-md-6" style="background: var(--bs-white);">
+                <p><br><span style="color: rgb(46, 46, 46); background-color: transparent;">With commercial music streaming service which can be accessed from mobile devices, the&nbsp;availability of digital music currently is abundant compared to previous era. Sorting out all this&nbsp;digital music is a very time-consuming and causes information fatigue. Therefore, it is very useful&nbsp;to develop a music recommender system that can search in the music libraries automatically and&nbsp;suggest suitable songs to users.</span><span style="color: windowtext; background-color: transparent;">​</span><span style="color: rgb(46, 46, 46); background-color: transparent;">By using music recommender system, the music provider can predict and then offer the&nbsp;appropriate songs to their users based on the characteristics of the music that has been heard&nbsp;previously.&nbsp;</span><span style="color: windowtext; background-color: transparent;">​</span><br><br></p>
+            </div>
+        </div>
+    </div>
+    <h1 style="text-align: center;margin-top: 47px;"><b>Program Brief</b></h1>
+    <div class="col d-lg-flex justify-content-lg-center">
+        <p style="width: 978px;text-align:center">Basically we first made a dataset containing 1000s of songs along with their audio features such as acousticness, valence, energy, etc. After that, we made recommendations using two methods namely:- Vector Distance and Kmeans. In vector distance, we converted our songs into vectors and calculated distance between your choosed song and other songs in our database. Then we made the recommendation by sorting the songs based on vector distance and giving top 5 songs.<br>In the Kmeans method, we applied Kmeans machine learning alogrithm to find clusters in our database. When you enter a song, we again use the Kmeans algorithm to predict which cluster the entered song will belong to and then we have displayed 5 random songs from that cluster.</p>
+    </div>
+    <h1 style="text-align: center;margin-top: 32px;"><b>Our Team</b></h1>
+    <div class="container py-4 py-xl-5">
+        <div class="row">
+            <div class="col-md-8 col-xl-6 mx-auto p-4">
+                <div class="d-flex align-items-center align-items-md-start align-items-xl-center">
+                    <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center me-4 d-inline-block bs-icon xl"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bell">
+                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"></path>
+                        </svg></div>
+                    <div>
+                        <h4>Aryan Gupta</h4>
+                        <p>Btech. CSE (AI &amp; ML) - 1</p><a href="https://www.linkedin.com/in/aryan-gupta-065689252">Linkedin</a>
+                    </div>
+                </div>
+                <hr class="my-5">
+                <div class="d-flex align-items-center align-items-md-start align-items-xl-center">
+                    <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center order-last ms-4 d-inline-block bs-icon xl"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bell">
+                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"></path>
+                        </svg></div>
+                    <div>
+                        <h4>Ayush Jindal</h4>
+                        <p>Btech. CSE (AI &amp; ML) - 1</p><a href="https://www.linkedin.com/in/ayush-jindal-684181219">Linkedin</a>
+                    </div>
+                </div>
+                <hr class="my-5">
+                <div class="d-flex align-items-center align-items-md-start align-items-xl-center">
+                    <div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center me-4 d-inline-block bs-icon xl"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bell">
+                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"></path>
+                        </svg></div>
+                    <div>
+                        <h4>Aditya Pandey</h4>
+                        <p>Btech. CSE (AI &amp; ML) - 1</p><a href="#">Linkedin</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+    <script src="static/assets/js/vanilla-zoom.js"></script>
+    <script src="static/assets/js/theme.js"></script>
+</body>
+
+</html>

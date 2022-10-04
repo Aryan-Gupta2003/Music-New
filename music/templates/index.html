@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Song</title>
+    <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="static/assets/css/Navbar-Right-Links-Dark-icons.css">
+    <link rel="stylesheet" href="static/assets/css/vanilla-zoom.min.css">
+    <link rel="icon" href="static/assets/img/icon.png">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark py-3">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg class="bi bi-music-note-list" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"></path>
+            <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"></path>
+            <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"></path>
+            <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"></path>
+        </svg></span><span>Muscial</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-5">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}" target="_blank">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}" target="_blank">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page landing-page">
+        <section class="clean-block clean-hero" style="color: rgba(9,162,255,0.36);background: url(&quot;static/assets/img/tech/download.gif&quot;) center;">
+            <div class="text">
+                <h2>Do you like listening to songs</h2>
+                <p>Want to find some new songs you may like based on your preferred song ?</p><a class="btn btn-outline-light btn-lg" role="button" href="#formsection" style="background: #ffffff;color: rgb(0,0,0);">SEARCH</a>
+            </div>
+        </section>
+        <section id="formsection" class="clean-block clean-info dark" style="background: url(&quot;static/assets/img/983279.webp&quot;);">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Enter song name that you like:</h2>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <form class="d-flex" method="POST">
+                    <input name='song' class="form-control" style="height: 34px;width: 428px;background: rgba(132,129,129,0.37);color: rgb(221,220,220);border-radius: 14px;">
+                    <button class="btn btn-primary" type="submit" style="margin-left: 5px;">Search</button>
+                </form>
+            </div>
+            {% if sname %}
+            <h1 style="color: var(--bs-body-bg);text-align: center;margin: 25px;">If your song is:</h1>
+            <div class="container" style="background: rgba(255, 255, 255, 0.349);border-radius: 25px;margin-top: 27px;">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 d-lg-flex justify-content-lg-end"><img width="100" height="80" style="width: 152px;height: 128px;margin-top: 10px;margin-bottom: 15px;" src="{{ img }}" /></div>
+                    <div class="col-md-6">
+                        <h1>{{ sname }}</h1>
+                        <p>By {{ aname }}</p>
+                    </div>
+                </div>
+            </div>
+            <h1 style="color: var(--bs-body-bg);text-align: center;margin: 25px;">You might like:</h1>
+            {% for r_sn,r_an,r_img,r_url in r %}
+                <div class="container" style="background: rgba(255, 255, 255, 0.349);border-radius: 25px;margin-top: 27px;">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 d-lg-flex justify-content-lg-end"><img width="100" height="80" style="width: 152px;height: 128px;margin-top: 10px;margin-bottom: 15px;" src="{{ r_img }}" /></div>
+                        <div class="col-md-6">
+                            <h1>{{ r_sn }}</h1>
+                            <p>By {{ r_an }}</p>
+                            <a href="{{ r_url }}" target="_blank">Listen Here</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% endif %}
+        </section>
+    </main>
+    <footer class="page-footer dark">
+        <div class="footer-copyright">
+            <p></p>
+        </div>
+    </footer>
+    <script src="static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+    <script src="static/assets/js/vanilla-zoom.js"></script>
+    <script src="static/assets/js/theme.js"></script>
+</body>
+
+</html>
